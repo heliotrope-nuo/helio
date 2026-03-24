@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AURELIE AULEN</title>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+  }
+  body {
+    display: flex;
+    background: #f5f5f5;
+  }
+
+  /* 左侧导航 */
+  .sidebar {
+    width: 90px;
+    background: #333;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    overflow-y: auto;
+  }
+  .logo {
+    padding: 20px 5px;
+    text-align: center;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    border-bottom: 1px solid #444;
+    line-height: 1.4;
+  }
+  .sidebar a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 14px 6px;
+    font-size: 13px;
+    text-align: center;
+  }
+  .sidebar a:hover {
+    background: #555;
+  }
+
+  /* 右侧 */
+  .right-wrap {
+    margin-left: 90px;
+    flex: 1;
+  }
+  .banner {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+  }
+  .content {
+    padding: 15px;
+  }
+  .section {
+    margin-bottom: 35px;
+  }
+  .section h2 {
+    font-size: 18px;
+    margin-bottom: 12px;
+    border-left: 3px solid #333;
+    padding-left: 10px;
+  }
+
+  /* 图片一行两个 */
+  .img-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .img-item {
+    background: white;
+    border-radius: 6px;
+    overflow: hidden;
+    cursor: zoom-in;
+  }
+  .img-item img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+  }
+  .img-item p {
+    padding: 8px;
+    text-align: center;
+    font-size: 12px;
+  }
+
+  /* 图片放大弹窗 */
+  .modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    z-index: 999;
+    align-items: center;
+    justify-content: center;
+  }
+  .modal img {
+    max-width: 90%;
+    max-height: 90%;
+  }
+  .modal.show {
+    display: flex;
+  }
+</style>
+</head>
+
+<body>
+
+<!-- 左侧导航 -->
+<div class="sidebar">
+  <div class="logo">AURELIE<br>AULEN</div>
+  <a href=" ">上衣</a >
+  <a href="#kuzi">裤子</a >
+  <a href="#qunzi">半身裙</a >
+  <a href="#lianyiqun">连衣裙</a >
+  <a href="#chunxia">春夏新品</a >
+  <a href="#dapei">时装搭配</a >
+  <a href="#xizhuang">西装</a >
+  <a href="#lifu">礼服</a >
+</div>
+
+<!-- 右侧 -->
+<div class="right-wrap">
+  < img src="c:\Users\15809\Desktop\1.jpg" class="banner" alt="宣传图">
+
+  <div class="content">
+    <div id="shangyi" class="section">
+      <h2>上衣</h2>
+      <div class="img-grid">
+        <div class="img-item" onclick="openImg(this)">
+          < img src="https://picsum.photos/seed=1/800/800">
+          <p>针织上衣</p >
+        </div>
+        <div class="img-item" onclick="openImg(this)">
+          < img src="https://picsum.photos/seed=2/800/800">
+          <p>衬衫</p >
+        </div>
+      </div>
+    </div>
+
+    <div id="kuzi" class="section">
+      <h2>裤子</h2>
+      <div class="img-grid">
+        <div class="img-item" onclick="openImg(this)">
+          < img src="https://picsum.photos/seed=10/800/800">
+          <p>牛仔裤</p >
+        </div>
+        <div class="img-item" onclick="openImg(this)">
+          < img src="https://picsum.photos/seed=11/800/800">
+          <p>阔腿裤</p >
+        </div>
+      </div>
+    </div>
+
+    <div id="qunzi" class="section">
+      <h2>半身裙</h2>
+      <div class="img-grid">
+        <div class="img-item" onclick="openImg(this)">< img src="c:\Users\15809\Desktop\1.jpg"><p>A字裙</p ></div>
+        <div class="img-item" onclick="openImg(this)">< img src="https://picsum.photos/seed=21/800/800"><p>百褶裙</p ></div>
+      </div>
+    </div>
+
+    <div id="lianyiqun" class="section">
+      <h2>连衣裙</h2>
+      <div class="img-grid">
+        <div class="img-item" onclick="openImg(this)">< img src="https://picsum.photos/seed=30/800/800"><p>碎花裙</p ></div>
+        <div class="img-item" onclick="openImg(this)">< img src="https://picsum.photos/seed=31/800/800"><p>雪纺裙</p ></div>
+      </div>
+    </div>
+
+    <div id="chunxia" class="section">
+      <h2>春夏新品</h2>
+      <div class="img-grid">
+        <div class="img-item" onclick="openImg(this)">< img src="https://picsum.photos/seed=40/800/800"><p>春夏新款1</p ></div>
+        <div class="img-item" onclick="openImg(this)">< img src="https://picsum.photos/seed=41/800/800"><p>春夏新款2</p ></div>
+      </div>
+    </div>
+
+    <div id="dapei" class="section">
+      <h2>时装搭配</h2>
+      <div class="img-grid">
+        <div class="img-item" onclick="openImg(this)">< img src="https://picsum.photos/seed=50/800/800"><p>日常搭配</p ></div>
+        <div class="img-item" onclick="openImg(this)">< img src="https://picsum.photos/seed=51/800/800"><p>通勤搭配</p ></div>
+      </div>
+    </div>
+
+    <div id="xizhuang" class="section">
+      <h2>西装</h2>
+      <div class="img-grid">
+        <div class="img-item" onclick="openImg(this)">< img src="https://picsum.photos/seed=60/800/800"><p>休闲西装</p ></div>
+        <div class="img-item" onclick="openImg(this)">< img src="https://picsum.photos/seed=61/800/800"><p>正装西装</p ></div>
+      </div>
+    </div>
+
+    <div id="lifu" class="section">
+      <h2>礼服</h2>
+      <div class="img-grid">
+        <div class="img-item" onclick="openImg(this)">< img src="https://picsum.photos/seed=70/800/800"><p>晚宴礼服</p ></div>
+        <div class="img-item" onclick="openImg(this)">< img src="https://picsum.photos/seed=71/800/800"><p>轻礼服</p ></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 放大弹窗 -->
+<div class="modal" id="imgModal" onclick="closeModal()">
+  < img id="bigImg">
+</div>
+
+<script>
+  function openImg(el) {
+    let img = el.querySelector('img');
+    document.getElementById('bigImg').src = img.src;
+    document.getElementById('imgModal').classList.add('show');
+  }
+  function closeModal() {
+    document.getElementById('imgModal').classList.remove('show');
+  }
+</script>
+
+</body>
+</html>
