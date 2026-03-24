@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<!-- saved from url=(0059)file:///C:/Users/15809/Desktop/AURELIE%20AULEN.html#chunxia -->
+<!-- saved from url=(0041)file:///C:/Users/15809/Desktop/index.html -->
 <html lang="zh-CN"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AURELIE AULEN</title>
+<title>服装展示网站</title>
 <style>
   * {
     margin: 0;
@@ -14,6 +14,7 @@
   body {
     display: flex;
     background: #f5f5f5;
+    overflow-x: hidden;
   }
 
   /* 左侧导航 */
@@ -25,15 +26,15 @@
     left: 0;
     top: 0;
     overflow-y: auto;
+    z-index: 10;
   }
   .logo {
-    padding: 20px 5px;
+    padding: 20px 0;
     text-align: center;
     color: #fff;
     font-size: 14px;
     font-weight: bold;
     border-bottom: 1px solid #444;
-    line-height: 1.4;
   }
   .sidebar a {
     display: block;
@@ -51,10 +52,12 @@
   .right-wrap {
     margin-left: 90px;
     flex: 1;
+    width: calc(100% - 90px);
   }
   .banner {
     width: 100%;
-    height: 180px;
+    height: auto;
+    max-height: 220px;
     object-fit: cover;
     display: block;
   }
@@ -71,17 +74,19 @@
     padding-left: 10px;
   }
 
-  /* 图片一行两个 */
+  /* 图片网格 不溢出 */
   .img-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
+    width: 100%;
   }
   .img-item {
     background: white;
     border-radius: 6px;
     overflow: hidden;
     cursor: zoom-in;
+    width: 100%;
   }
   .img-item img {
     width: 100%;
@@ -95,22 +100,25 @@
     font-size: 12px;
   }
 
-  /* 图片放大弹窗 */
+  /* 弹窗放大 绝对不溢出 */
   .modal {
     display: none;
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.9);
-    z-index: 999;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.95);
+    z-index: 9999;
     align-items: center;
     justify-content: center;
+    padding: 10px;
   }
   .modal img {
-    max-width: 90%;
-    max-height: 90%;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    display: block;
   }
   .modal.show {
     display: flex;
@@ -283,31 +291,31 @@
 
 <!-- 左侧导航 -->
 <div class="sidebar">
-  <div class="logo">AURELIE<br>AULEN</div>
-  <a href="file:///C:/Users/15809/Desktop/AURELIE%20AULEN.html">上衣</a>
-  <a href="file:///C:/Users/15809/Desktop/AURELIE%20AULEN.html#kuzi">裤子</a>
-  <a href="file:///C:/Users/15809/Desktop/AURELIE%20AULEN.html#qunzi">半身裙</a>
-  <a href="file:///C:/Users/15809/Desktop/AURELIE%20AULEN.html#lianyiqun">连衣裙</a>
-  <a href="file:///C:/Users/15809/Desktop/AURELIE%20AULEN.html#chunxia">春夏新品</a>
-  <a href="file:///C:/Users/15809/Desktop/AURELIE%20AULEN.html#dapei">时装搭配</a>
-  <a href="file:///C:/Users/15809/Desktop/AURELIE%20AULEN.html#xizhuang">西装</a>
-  <a href="file:///C:/Users/15809/Desktop/AURELIE%20AULEN.html#lifu">礼服</a>
+  <div class="logo">品牌LOGO</div>
+  <a href="file:///C:/Users/15809/Desktop/index.html">上衣</a>
+  <a href="file:///C:/Users/15809/Desktop/index.html#kuzi">裤子</a>
+  <a href="file:///C:/Users/15809/Desktop/index.html#qunzi">半身裙</a>
+  <a href="file:///C:/Users/15809/Desktop/index.html#lianyiqun">连衣裙</a>
+  <a href="file:///C:/Users/15809/Desktop/index.html#chunxia">春夏新品</a>
+  <a href="file:///C:/Users/15809/Desktop/index.html#dapei">时装搭配</a>
+  <a href="file:///C:/Users/15809/Desktop/index.html#xizhuang">西装</a>
+  <a href="file:///C:/Users/15809/Desktop/index.html#lifu">礼服</a>
 </div>
 
-<!-- 右侧 -->
+<!-- 右侧内容 -->
 <div class="right-wrap">
-  <img src="./AURELIE AULEN_files/742-1200x400.jpg" class="banner" alt="宣传图">
+  <img src="./index_files/504-1200x400.jpg" class="banner" alt="AURELIE AULEN">
 
   <div class="content">
     <div id="shangyi" class="section">
       <h2>上衣</h2>
       <div class="img-grid">
         <div class="img-item" onclick="openImg(this)">
-          <img src="./AURELIE AULEN_files/2.jpg">
+          <img src="./index_files/2.jpg">
           <p>针织上衣</p>
         </div>
         <div class="img-item" onclick="openImg(this)">
-          <img src="./AURELIE AULEN_files/7.jpg">
+          <img src="./index_files/4.jpg">
           <p>衬衫</p>
         </div>
       </div>
@@ -317,11 +325,11 @@
       <h2>裤子</h2>
       <div class="img-grid">
         <div class="img-item" onclick="openImg(this)">
-          <img src="./AURELIE AULEN_files/10.jpg">
+          <img src="./index_files/10.jpg">
           <p>牛仔裤</p>
         </div>
         <div class="img-item" onclick="openImg(this)">
-          <img src="./AURELIE AULEN_files/800">
+          <img src="./index_files/15.jpg">
           <p>阔腿裤</p>
         </div>
       </div>
@@ -330,48 +338,48 @@
     <div id="qunzi" class="section">
       <h2>半身裙</h2>
       <div class="img-grid">
-        <div class="img-item" onclick="openImg(this)"><img src="./AURELIE AULEN_files/1.jpg"><p>A字裙</p></div>
-        <div class="img-item" onclick="openImg(this)"><img src="./AURELIE AULEN_files/800(1)"><p>百褶裙</p></div>
+        <div class="img-item" onclick="openImg(this)"><img src="./index_files/3.jpg"><p>A字裙</p></div>
+        <div class="img-item" onclick="openImg(this)"><img src="./index_files/1.jpg"><p>短裙</p></div>
       </div>
     </div>
 
     <div id="lianyiqun" class="section">
       <h2>连衣裙</h2>
       <div class="img-grid">
-        <div class="img-item" onclick="openImg(this)"><img src="./AURELIE AULEN_files/800(2)"><p>碎花裙</p></div>
-        <div class="img-item" onclick="openImg(this)"><img src="./AURELIE AULEN_files/800(3)"><p>雪纺裙</p></div>
+        <div class="img-item" onclick="openImg(this)"><img src="./index_files/12.jpg"><p>雪纺裙</p></div>
+        <div class="img-item" onclick="openImg(this)"><img src="./index_files/11.jpg"><p>格纹裙</p></div>
       </div>
     </div>
 
     <div id="chunxia" class="section">
       <h2>春夏新品</h2>
       <div class="img-grid">
-        <div class="img-item" onclick="openImg(this)"><img src="./AURELIE AULEN_files/800(4)"><p>春夏新款1</p></div>
-        <div class="img-item" onclick="openImg(this)"><img src="./AURELIE AULEN_files/800(5)"><p>春夏新款2</p></div>
+        <div class="img-item" onclick="openImg(this)"><img src="./index_files/9.jpg"><p>春夏新款1</p></div>
+        <div class="img-item" onclick="openImg(this)"><img src="./index_files/13.jpg"><p>春夏新款2</p></div>
       </div>
     </div>
 
     <div id="dapei" class="section">
       <h2>时装搭配</h2>
       <div class="img-grid">
-        <div class="img-item" onclick="openImg(this)"><img src="./AURELIE AULEN_files/800(6)"><p>日常搭配</p></div>
-        <div class="img-item" onclick="openImg(this)"><img src="./AURELIE AULEN_files/800(7)"><p>通勤搭配</p></div>
+        <div class="img-item" onclick="openImg(this)"><img src="./index_files/18.jpg"><p>日常搭配</p></div>
+        <div class="img-item" onclick="openImg(this)"><img src="./index_files/17.jpg"><p>通勤搭配</p></div>
       </div>
     </div>
 
     <div id="xizhuang" class="section">
       <h2>西装</h2>
       <div class="img-grid">
-        <div class="img-item" onclick="openImg(this)"><img src="./AURELIE AULEN_files/8.jpg"><p>休闲西装</p></div>
-        <div class="img-item" onclick="openImg(this)"><img src="./AURELIE AULEN_files/800(8)"><p>正装西装</p></div>
+        <div class="img-item" onclick="openImg(this)"><img src="./index_files/8.jpg"><p>休闲西装</p></div>
+        <div class="img-item" onclick="openImg(this)"><img src="./index_files/14.jpg"><p>正装西装</p></div>
       </div>
     </div>
 
     <div id="lifu" class="section">
       <h2>礼服</h2>
       <div class="img-grid">
-        <div class="img-item" onclick="openImg(this)"><img src="./AURELIE AULEN_files/5.jpg"><p>晚宴礼服</p></div>
-        <div class="img-item" onclick="openImg(this)"><img src="./AURELIE AULEN_files/6.jpg"><p>轻礼服</p></div>
+        <div class="img-item" onclick="openImg(this)"><img src="./index_files/5.jpg"><p>晚宴礼服</p></div>
+        <div class="img-item" onclick="openImg(this)"><img src="./index_files/6.jpg"><p>轻礼服</p></div>
       </div>
     </div>
   </div>
@@ -379,7 +387,7 @@
 
 <!-- 放大弹窗 -->
 <div class="modal" id="imgModal" onclick="closeModal()">
-  <img id="bigImg" src="./AURELIE AULEN_files/2.jpg">
+  &lt; img id="bigImg"&gt;
 </div>
 
 <script>
